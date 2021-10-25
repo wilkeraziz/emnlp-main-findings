@@ -1,6 +1,8 @@
 Bayesian data analysis (BDA) of citation counts for papers presented at the EMNLP main conference and Findings of EMNLP 2020.
 
-If you plot the counts, you will see that a single Poisson distribution won't fit the data well, classic Frequentist tests struggle to handle the fact that there are hidden explanations (e.g., mixture of Poisson distributions with unknown rates) and they hinge on availability of infinite data. Here, we make an explicit hierarchical account of our assumptions (e.g., that we have an unknown mixture of unknown Poisson distributions) and use posterior inference to analyse plausible values for the latent parameters. As the parameters are themselves interpretable, we gain insights about the data. We can always criticise our assumptions, and come up with better models, and we should do that whenever we have evidence that the fit isn't good or whenever we feel like learning about an aspect of the data not yet accounted for by our latent variables.
+If you plot the counts, you will see that a single Poisson distribution won't fit the data well (see Gamma-Poisson notebook for an attempt to model the data like that). Classic Frequentist tests struggle to handle the fact that there are hidden explanations (e.g., mixture of Poisson distributions with unknown rates and unknown mixing proportions), they also hinge on availability of infinite data, which we never have. 
+
+Here, we make an explicit hierarchical account of our assumptions (e.g., that we have an unknown mixture of unknown Poisson distributions) and use posterior inference to analyse plausible values for the latent parameters (i.e., Poisson rates and mixing weights). As the parameters are themselves interpretable, we gain insights about the data. We can always criticise our assumptions, and come up with better models, and we should do that whenever we have evidence that the fit isn't good (if you check the Gamma-Poisson notebook, you will see an example of that), or whenever we feel like learning about an aspect of the data not yet accounted for by our latent variables.
 
 Check the notebooks for a description of the analysis model.
 
@@ -26,3 +28,5 @@ Each row is a posterior component in a mixture model.
 We can see up to 5 patterns (expressed in terms of posterior expected counts), group-specific differences within the pattern, and how important they are to the two groups. The last two rows represent less than 5\% of the posterior mass.
 
 <img src="emnlp-findings-differences.png" alt="" width="300" />
+
+
